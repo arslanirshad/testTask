@@ -1,35 +1,28 @@
 <?php
+
 // Merged from custom/Extension/modules/TJ_Visits/Ext/LogicHooks/LH_patients.php
 
-
-$hook_array['before_save'][] = array
-(
+$hook_array['before_save'][] = array(
     10,
-   'Dont Allow multiple visits in Queue',
-   'custom/modules/TJ_Visits/visit_patient.php',
-   'visit_patient',
-   'visit_patient_before_method'
+    'Before Save Logic Hooks',
+    'custom/modules/TJ_Visits/visitPatientLogicHooks.php', //You could also use namespaces
+    'visitPatientClass',
+    'before_save'
 );
 
-$hook_array['after_save'][] = array
-(
+$hook_array['after_save'][] = array(
     10,
-   'Rutines after save',
-   'custom/modules/TJ_Visits/visit_patient.php',
-   'visit_patient',
-   'afterSave'
+    'After Save Logic Hooks',
+    'custom/modules/TJ_Visits/visitPatientLogicHooks.php',
+    'visitPatientClass',
+    'after_save'
 );
 
-$hook_array['after_relationship_add'][] = array
-(
+$hook_array['after_relationship_add'][] = array(
     10,
-   'After Relationship Add',
-   'custom/modules/TJ_Visits/visit_patient.php',
-   'visit_patient',
-   'afterRelationshipAdd'
+    'After Relationship Add Logic Hooks',
+    'custom/modules/TJ_Visits/visitPatientLogicHooks.php',
+    'visitPatientClass',
+    'after_relationship_add'
 );
-
-
-
-
 ?>
